@@ -1,15 +1,15 @@
+//路由组件的入口文件
+
 import Vue from 'vue'
-import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import VueRouter from 'vue-router'
 
-Vue.use(Router)
+import routes from './routes'
 
-export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    }
-  ]
+
+
+Vue.use(VueRouter)
+
+export default new VueRouter({
+  mode:'history', //去除路由路径中的#
+  routes
 })
