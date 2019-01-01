@@ -8,32 +8,57 @@ import Category from '../pages/Category/Category.vue'
 import Shiwu from '../pages/Shiwu/Shiwu.vue'
 import Cart from '../pages/Cart/Cart.vue'
 import Profile from '../pages/Profile/Profile.vue'
+import Search from '../pages/Search/Search.vue'
+import Login from '../pages/Login/Login.vue'
 
 
 
 export default [
   {
     path:'/msite',
-    component:Msite
+    component:Msite,
+    meta: {
+      showFooter: true
+    }
   },
   {
     path:'/category',
-    component:Category
+    component:Category,
+    meta: {
+      showFooter: true
+    }
   },
   {
     path:'/shiwu',
-    component:Shiwu
+    component:Shiwu,
+    meta: {
+      showFooter: true
+    }
   },
   {
     path:'/cart',
-    component:Cart
+    component:Cart,
+    meta: {
+      showFooter: true
+    }
   },
   {
     path:'/profile',
-    component:Profile
+    component:Profile,
+    meta: {
+      showFooter: true
+    }
+  },
+  {
+    path:'/search',
+    component:Search
+  },
+  {
+    path:'/login',
+    component:Login
   },
   {
     path:'/',
-    component: Msite,
+    redirect: '/msite'
   },
 ]

@@ -65,7 +65,7 @@
   right 0
   background #fff
   width 100%
-  height 50px
+  height 1.30667rem
   display flex
   .guide-item
     display flex
@@ -78,10 +78,10 @@
     &.on
       color red
     span
-      font-size 12px
-      margin-top 5px
+      font-size 0.35rem
+      margin-top 0.133rem
       .iconfont
-        font-size 22px
+        font-size 0.5rem
 
 
 </style>
