@@ -3,6 +3,8 @@
 //引入各种库
 
 import Vue from 'vue'
+import './mock/mockSever'
+
 
 
 //引入各种主文件夹
@@ -20,5 +22,6 @@ new Vue({
   el:'#app',
   render: h => h(App),
   router,
-  store
+  store,
+  
 })

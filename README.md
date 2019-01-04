@@ -62,7 +62,61 @@
 * 先写FooterGuide组件,让底部导航全都显示出来
   1. 点击哪个导航就跳转到哪个页面,给一个点击事件,定义一个方法,用声明式路由跳转
   2. 跳转到哪个页面,哪个导航拥有on类名,需要定义一个方法判断是都已经跳转到该导航页面,跳转了才能有on类
-*写msite头部,
+
+
+***
+
+设置api
+
+* 跨域问题:
+    在config => index.js中设置代理信息
+          proxyTable: {
+                '/api': { // 匹配所有以 '/api'开头的请求路径
+                  target: 'http://localhost:5000', // 代理目标的基础路径
+                  changeOrigin: true, // 支持跨域
+                  pathRewrite: {// 重写路径: 去掉路径中开头的'/api'
+                    '^/api': ''
+                  }
+                }
+          },
+
+*设置mock
+ 下载  npm i mock --save
+
+    import Mock from 'mockjs'
+    import data from './data.json'  // 已自动解析js对应的类型: 对象
+
+    // goods的接口
+    Mock.mock('/goods', {code: 0, data: data.goods})
+    // ratings的接口
+    Mock.mock('/ratings', {code: 0, data: data.ratings})
+    // info的接口
+    Mock.mock('/info', {code: 0, data: data.info})
+
+    console.log('mockServer....')
+
+    // export  不需要向外暴露任何东西
+
+
+
+    *先设置mockSever=>api.index中设置=>mutation-types中定义=>store中的modules中引入api和mutation-types中定义的东西
+    =>store中的modules中的state中定义状态=>store中的modules中的mutation中拿到数据=>store中的modules中的action中定义异步获取数据的方法
+    =>到相应的组件中传递数据以及从state中拿到数据(dispath和mapState)
+
+
+    **拆分一个新的组件
+
+
+
+    <!--关于第二行跳转：左右两边列表必须用同一个数据首先绑定一个点击事件@click="handleClick在methods:
+    里面定义这个点击事件然后在data里面存一个下标，下标可以自定义
+     {pageCount: 0初始位置为0，然后把下标传进绑定监听里面@click="handleClick(index,，在定义绑定监听里传进去handleClick(index）
+     { this.pageCount = index然后完了以后点击左侧列表右侧列表
+     跟着滑动到相应位置in categoryL1List[pageCount].subCateList因为subCateList数据在ategoryL1List里所以用用下标找-->
+
+
+
+
 
 
 

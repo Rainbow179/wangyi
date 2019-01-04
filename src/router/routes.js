@@ -45,9 +45,6 @@ export default [
   {
     path:'/profile',
     component:Profile,
-    meta: {
-      showFooter: true
-    }
   },
   {
     path:'/search',
