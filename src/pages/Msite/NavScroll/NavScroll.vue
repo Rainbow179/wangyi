@@ -10,7 +10,7 @@
       </div>
     </div>
   </div>
-</template>isShow
+</template>
 <script>
   import BScorll from 'better-scroll'
 

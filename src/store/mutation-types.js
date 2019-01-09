@@ -5,4 +5,7 @@ export const RECEIVE_CATELIST = 'receive_cateList'
 export const RECEIVE_FOCUSLIST = 'receive_focusList'
 export const RECEIVE_SUBCATELIST = 'receive_subCateList'
 export const RECEIVE_NAVLIST = 'receive_navList'
+export const RECEIVE_NAVTAB = 'receive_navTab'
+export const RECEIVE_FEHELPER = 'receive_feHelper'
+
 

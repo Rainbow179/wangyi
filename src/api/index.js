@@ -10,7 +10,9 @@ export const reqcateList = ()=>ajax('/cateList')
 export const reqfocusList=()=>ajax('/focusList')
 //第二页左边导航
 export const reqnavList=()=>ajax('/navList')
-
+//第三页实物tab
+export const reqnavTab=()=>ajax('/navTab')
+export const reqfeHelper=()=>ajax('/feHelper')
 
 
 

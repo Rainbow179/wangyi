@@ -10,7 +10,7 @@ import {
 
 const state={
 //状态
-  navList:{}
+  navList:[]
 }
 
 const mutations ={

@@ -10,26 +10,26 @@
       </div>
       <!--左边导航-->
       <div class="navLeft wrapper">
-        <ul class="navList content">
-          <li class="navItem" v-for="(list,index) in navList" :key="index">
+        <ul class="navList1 content">
+          <li class="navItem" @click="current=index" :class="{on:current===index}" v-for="(list,index) in navList" :key="index">
             <a href="##" class="navtxt">{{list.name}}</a>
           </li>
         </ul>
       </div>
       <!--右边内容-->
-      <div class="listDetail">
+      <div class="listDetail" v-if="selectedOpation">
           <div class="banner">
-            <img alt="">
+            <img />
           </div>
           <div class="detail">
-            <ul class="list">
-              <li class="item" v-for="(nav,index) in navList.subCateList" :key="index">
+            <ul class="list" >
+              <li class="item"  v-for="(list,index) in selectedOpation.subCateList" :key="index">
                 <a href="javascript:;">
                   <div class="pic">
-                    <img :src="nav.bannerUrl">
+                    <img :src="list.bannerUrl">
                   </div>
                   <div class="txt">
-                    <i>{{nav.name}}</i>
+                    <i>{{list.name}}</i>
                   </div>
                 </a>
               </li>
@@ -45,6 +45,12 @@
   import {mapState} from 'vuex'
 
   export default {
+    data(){
+      return{
+        current: 0
+      }
+    },
+
 
     methods:{
       goto(path){
@@ -55,15 +61,18 @@
     computed:{
       ...mapState({
         navList:state=>state.categery.navList
-      })
+      }),
+
+      selectedOpation(){
+        const {current} = this
+        return this.navList.find((item,index)=>index===current)
+      }
     },
 
     mounted(){
       new BScroll('.wrapper')
       this.$store.dispatch('getnavList')
     }
-
-
 
   }
 </script>
@@ -115,7 +124,7 @@
         width 2.16rem
         background white
         border-right 1px solid #eee
-        .navList
+        .navList1
           height 110%
           padding-top 1.17333rem
           padding-bottom 1.30667rem

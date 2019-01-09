@@ -115,6 +115,40 @@
      跟着滑动到相应位置in categoryL1List[pageCount].subCateList因为subCateList数据在ategoryL1List里所以用用下标找-->
 
 
+****
+  点击哪个给哪个添加一个样式:active的添加:
+  <a href="##" @click="change(1)" :class="current===1? 'on' : ''">发现</a>
+  <a href="##" @click="change(2)" :class="current===2? 'on' : ''">甄选家</a>
+
+  给current 设置初始状态为1(data中)
+  methods中定义一个方法来判断change的值
+        change:function(a){  //传入参数这里指1、2
+          this.current=a;   //current==1 or current==2
+        }
+
+ ****
+ 关于api发送ajax接口的说明(api中index):
+  1.export const reqnavList=()=>ajax('/navList')
+    1.箭头函数中()传入要带的参数,ajax()中有三个参数,地址,带的参数信息,请求方式
+     export const reqnavList=(user)=>ajax('/navList',{name,pwd,captcha},'POST')
+     user中必须含有name,pwd.captcha三个参数,或者user直接写成({name,pwd,captcha}),ajax第二个参数必须时对象
+     箭头函数中的()中写对象是一个对象参数,需要对应着写,不写对象,写几个参数就是几个参数
+
+
+
+  ****
+    个人页面
+       用二级路由
+       定义手机登陆和邮箱登陆以及注册的二级路由,页面显示上大致是一样的样式,可以用相同的class名来写,
+       个人页面的一些东西可以按照路由地址来判断 v-if='$route.path====profile'  相等就显示,不相等就不显示
+       登陆页面能复用的地方做一个组件,方便复用
+
+       前台表单验证:
+         正则必须要会!
+
+
+
+
 
 
 

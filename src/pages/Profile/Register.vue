@@ -1,8 +1,10 @@
 <template>
-  <div>登录</div>
+  <div></div>
 </template>
 <script>
-  export default {}
+  export default {
+    name: "Register",
+  }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>

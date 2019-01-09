@@ -9,7 +9,11 @@ import Shiwu from '../pages/Shiwu/Shiwu.vue'
 import Cart from '../pages/Cart/Cart.vue'
 import Profile from '../pages/Profile/Profile.vue'
 import Search from '../pages/Search/Search.vue'
-import Login from '../pages/Login/Login.vue'
+import PhoneLogin from '../pages/Profile/PhoneLogin.vue'
+import EmailLogin from '../pages/Profile/EmailLogin.vue'
+import Register from '../pages/Profile/Register.vue'
+
+
 
 
 
@@ -45,15 +49,31 @@ export default [
   {
     path:'/profile',
     component:Profile,
+    //二级路由
+    children:[
+      {
+        name: 'PhoneLogin',
+        path: '/profile/phone',
+        component: PhoneLogin,
+      },
+      {
+        name: 'EmailLogin',
+        path: '/profile/email',
+        component: EmailLogin,
+      },
+      {
+        name: 'Register',
+        path: '/profile/register',
+        component: Register,
+      },
+      
+    ]
   },
   {
     path:'/search',
     component:Search
   },
-  {
-    path:'/login',
-    component:Login
-  },
+  
   {
     path:'/',
     redirect: '/msite'

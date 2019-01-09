@@ -16,11 +16,11 @@
   </div>
     <!--1.轮播-->
     <div class="swiper-container" >
-      <ul class="swiper-wrapper">
-        <li class="swiper-slide" v-for="(focus,index) in focusList" :key="index">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" v-for="(focus,index) in focusList" :key="index">
           <img :src="focus.picUrl" alt="">
-        </li>
-      </ul>
+        </div>
+      </div>
       <div class="swiper-pagination"></div>
     </div>
     <!--说明-->
@@ -92,7 +92,7 @@
 
     },
     watch:{
-      navList(){
+      focusList(){
         this.$nextTick(() => {
           // 创建swiper对象的时机: 列表数据显示之后
           new Swiper('.swiper-container', { // 配置对象
